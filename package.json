@@ -1,0 +1,30 @@
+{
+  "name": "qslash",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@evex/scratch-blocks": "npm:@jsr/evex__scratch-blocks",
+    "scratch-render": "^2.0.75",
+    "scratch-storage": "^4.0.23",
+    "scratch-vm": "^5.0.80",
+    "solid-js": "^1.9.3"
+  },
+  "devDependencies": {
+    "@iconify-json/tabler": "^1.2.13",
+    "@turbowarp/types": "^0.0.12",
+    "@unocss/core": "^0.65.3",
+    "@unocss/preset-icons": "^0.65.3",
+    "@unocss/preset-uno": "^0.65.3",
+    "@unocss/reset": "^0.65.3",
+    "@unocss/vite": "^0.65.3",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5",
+    "vite-plugin-solid": "^2.11.0"
+  }
+}
