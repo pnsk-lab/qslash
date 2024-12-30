@@ -20,7 +20,7 @@ export function GUI (props: {
           <Player store={props.store} />
         </div>
         <div class="max-h-1/2">
-          <ObjectManager />
+          <ObjectManager store={props.store} />
         </div>
       </div>
     </div>
