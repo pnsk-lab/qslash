@@ -22,10 +22,7 @@ export function Player(props: {
   onMount(async () => {
     const renderer = new Render(canvas)
     props.store.vm.attachRenderer(renderer)
-    await props.store.vm.loadProject(defaultProject)
-    props.store.editingTarget = props.store.vm.runtime.targets[0].id
-    props.store.targets = [...props.store.vm.runtime.targets]
-    props.store.vm.start()
+    await props.store.loadProject(defaultProject)
   })
 
   return <div class="w-full max-h-full grid place-items-center p-2">

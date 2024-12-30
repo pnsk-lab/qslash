@@ -13,7 +13,6 @@ export function SpritesSelector(props: {
     id: string
   }
   let lastSpritesJSON = '[]'
-  let lastChanged = 0
   const [getSprites, setSprites] = createSignal<Sprite[]>([])
 
   createEffect(() => {
@@ -23,12 +22,10 @@ export function SpritesSelector(props: {
       image: t.getCurrentCostume().asset.encodeDataURI()
     }))
     const json = JSON.stringify(sprites)
-    const crr = Date.now()
-    if (json === lastSpritesJSON || crr - lastChanged < 500) {
+    if (json === lastSpritesJSON) {
       return
     }
-    lastChanged = crr
-    setSprites(sprites)
+    setSprites([...sprites])
     lastSpritesJSON = json
   })
 

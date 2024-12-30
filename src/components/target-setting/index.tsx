@@ -32,8 +32,6 @@ export function TargetSetting (props: {
     }
   }
   
-  createEffect(() => console.log(props.store.targets))
-
   let lastTarget: RenderedTarget | null = getEditingTarget()
   createEffect(() => {
     if (lastTarget) {

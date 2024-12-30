@@ -10,7 +10,7 @@ export function GUI (props: {
 }) {
   return <div class="flex flex-col h-dvh">
     <div>
-      <Nav />
+      <Nav store={props.store} />
     </div>
     <div class="grow grid grid-cols-3">
       <div class="col-span-2 h-full">
