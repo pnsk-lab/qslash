@@ -27,12 +27,22 @@ export function Player(props: {
   })
 
   return <div class="w-full max-h-full grid place-items-center p-2">
-    <canvas
-      class="h-36 border rounded-sm"
-      ref={canvas}
-      onPointerDown={ev => postMouse(ev, true)}
-      onPointerMove={ev => postMouse(ev)}
-      onPointerUp={ev => postMouse(ev, false)}
-    />
+    <div>
+      <div class="grid grid-cols-2">
+        <button class="i-tabler:flag w-8 h-8" onClick={() => {
+          props.store.vm.greenFlag()
+        }} />
+        <button class="i-tabler:player-stop w-8 h-8" onClick={() => {
+          props.store.vm.stopAll()
+        }} />
+      </div>
+      <canvas
+        class="h-36 border rounded-sm"
+        ref={canvas}
+        onPointerDown={ev => postMouse(ev, true)}
+        onPointerMove={ev => postMouse(ev)}
+        onPointerUp={ev => postMouse(ev, false)}
+      />
+    </div>
   </div>
 }
