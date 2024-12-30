@@ -14,7 +14,7 @@ export class QslashStore {
     this.vm = vm
     this.vm.attachStorage(this.storage)
     this.vm.on('targetsUpdate', () => {
-      this.targets = vm.runtime.targets
+      this.targets = [...vm.runtime.targets]
     })
   }
 

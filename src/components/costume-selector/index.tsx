@@ -11,7 +11,7 @@ export default function CostumeSelector(props: {
       <div class="grid place-items-center h-20">
         <img class="grow h-12" src={props.image} />
       </div>
-      <div class="border-t">
+      <div class="border-t break-keep overflow-x-auto">
         {props.name}
       </div>
     </div>

@@ -1,6 +1,4 @@
-import { createEffect, createSignal, onCleanup, onMount } from "solid-js"
 import { QslashStore } from "../../store"
-import { Target } from "scratch-vm"
 import { SpritesSelector } from "./SpritesSelector"
 
 export function ObjectManager(props: {
@@ -18,6 +16,8 @@ export function ObjectManager(props: {
     </div>
     <div class="border rounded-md p-1" role='button' onClick={() => {
       props.store.editingTarget = props.store.vm.runtime.getTargetForStage()?.id ?? ''
+    }} classList={{
+      'border-blue-500': props.store.vm.runtime.getTargetById(props.store.editingTarget ?? '')?.isStage
     }}>
       Stage
     </div>
