@@ -1,6 +1,7 @@
 import { createEffect, createSignal, Match, Switch } from 'solid-js'
 import { CodeEditor } from '../code-editor'
 import { QslashStore } from '../../store'
+import { CostumeEditor } from '../costume-editor'
 
 function EditModeButton (props: {
   icon: string
@@ -40,6 +41,7 @@ export function EditPanel (props: {
     <div class="grow border rounded-md">
       <Switch fallback={'Not implemented yet.'}>
         <Match when={getEditMode() === 'code'}><CodeEditor store={props.store} /></Match>
+        <Match when={getEditMode() === 'costumes'}><CostumeEditor store={props.store} /></Match>
       </Switch>
     </div>
   </div>

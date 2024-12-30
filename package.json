@@ -9,8 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@evex-dev/scratch-paint": "^0.1.2",
     "@evex/scratch-blocks": "npm:@jsr/evex__scratch-blocks",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
     "fflate": "^0.8.2",
+    "paper": "^0.12.18",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "scratch-l10n": "^5.0.63",
     "scratch-render": "^2.0.75",
     "scratch-storage": "^4.0.23",
     "scratch-vm": "^5.0.80",
