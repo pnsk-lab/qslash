@@ -6,7 +6,10 @@ export function CodeEditor (props: {
   store: QslashStore
 }) {
   const onWorkSpaceUpdate = ({ xml }: { xml: string }) => {
-    
+    // @ts-ignore
+    const dom = Blockly.Xml.textToDom(xml)
+    // @ts-ignore
+    Blockly.Xml.clearWorkspaceAndLoadFromXml(dom, props.store.workspace);
   }
   onMount(() => {
     props.store.vm.on('workspaceUpdate', onWorkSpaceUpdate)
@@ -37,6 +40,11 @@ export function CodeEditor (props: {
       comments: true,
       collapse: false,
       sounds: false
+    })
+    // @ts-ignore
+    workspace.addChangeListener?.((ev) => {
+      // @ts-ignore
+      props.store.vm.blockListener?.(ev)
     })
     props.store.workspace = workspace
   })

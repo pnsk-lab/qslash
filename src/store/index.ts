@@ -16,12 +16,8 @@ export class QslashStore {
     this.vm.on('targetsUpdate', () => {
       this.targets = vm.runtime.targets
     })
-
-    createEffect(() => {
-      // @ts-ignore
-      this.workspace?.addChangeListener?.(vm.blocklyListener)
-    })
   }
+
   get workspace() {
     return this.#workspace[0]()!
   }
@@ -30,15 +26,11 @@ export class QslashStore {
   }
 
   get editingTarget (): string | undefined {
-    const id = this.vm.editingTarget?.id
-    if (this.#editingTarget[0]() !== id) {
-      this.#editingTarget[1](id)
-    }
-    return id
+    return this.#editingTarget[0]()
   }
   set editingTarget (target: string) {
-    this.#editingTarget[1](target)
     this.vm.setEditingTarget(target)
+    this.#editingTarget[1](target)
   }
 
   get targets() {

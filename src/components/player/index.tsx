@@ -1,5 +1,5 @@
 import Render from 'scratch-render'
-import { createEffect, onMount } from 'solid-js'
+import { onMount } from 'solid-js'
 import { QslashStore } from '../../store'
 import defaultProject from '../../lib/default-project.json'
 
@@ -24,7 +24,7 @@ export function Player(props: {
     props.store.vm.attachRenderer(renderer)
     await props.store.vm.loadProject(defaultProject)
     props.store.editingTarget = props.store.vm.runtime.targets[0].id
-    props.store.targets = props.store.vm.runtime.targets
+    props.store.targets = [...props.store.vm.runtime.targets]
     props.store.vm.start()
   })
 

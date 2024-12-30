@@ -19,7 +19,7 @@ export function GUI (props: {
         <div class="max-h-1/2">
           <Player store={props.store} />
         </div>
-        <div class="max-h-1/2">
+        <div class="h-full">
           <ObjectManager store={props.store} />
         </div>
       </div>
