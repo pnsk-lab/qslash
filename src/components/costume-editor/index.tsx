@@ -18,6 +18,7 @@ export function CostumeEditor (props: {
     }
     targetId && (lastTargetId = targetId)
   })
+  const getSelectedCostume = createMemo(() => getCostumes()?.find(costume => getSelectedCostumeId() === costume.name))
 
   return <div class="flex">
     <div class="w-30 overflow-y-auto">
@@ -32,7 +33,7 @@ export function CostumeEditor (props: {
       )}</For>
     </div>
     <div class="grow">
-
+      <PaintEditor costume={getSelectedCostume()!} />
     </div>
   </div>
 }
